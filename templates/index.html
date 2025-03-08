@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: black;
+            color: white;
+        }
+        #snap-message, #error-message, #dependency-error, #override-button {
+            display: none;
+        }
+        #error-message {
+            color: red;
+            font-size: 24px;
+            margin-top: 20px;
+            animation: blink 1s infinite; /* Blinking effect */
+        }
+        #dependency-error {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #download-button, #override-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #override-button {
+            background-color: green;
+        }
+
+        /* Blinking Animation */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Thomas</h1>
+    <button id="download-button">Download Me</button>
+
+    <p id="snap-message">Aw Snap!</p>
+    <p id="error-message">ERROR 403 - ACCESS DENIED - Emotional Availability Required</p>
+    <p id="dependency-error">Dependency Error: This software cannot function without mutual effort.</p>
+
+    <button id="override-button">Override Error, Proceed to Download</button>
+
+    <script>
+        document.getElementById("download-button").addEventListener("click", function() {
+            document.getElementById("snap-message").style.display = "block";
+
+            setTimeout(() => {
+                document.getElementById("error-message").style.display = "block";
+            }, 1500); // Show error message after 1.5 seconds
+
+            setTimeout(() => {
+                document.getElementById("dependency-error").style.display = "block";
+            }, 3000); // Show dependency error after 3 seconds
+
+            setTimeout(() => {
+                document.getElementById("override-button").style.display = "block";
+            }, 8000); // Show override button after 8 seconds
+        });
+
+        document.getElementById("override-button").addEventListener("click", function() {
+            window.location.href = "/download"; // Triggers the PDF download
+        });
+    </script>
+</body>
+</html>

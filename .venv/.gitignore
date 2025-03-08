@@ -1,0 +1,17 @@
+# created by virtualenv automatically
+from flask import Flask, render_template, send_file
+
+app = Flask(__name__)
+
+# Serve the main webpage
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+# Serve the PDF file when requested
+@app.route('/download')
+def download_file():
+    return send_file("file.pdf", as_attachment=True)
+
+if __name__ == '__main__':
+    app.run(debug=True)
