@@ -8,7 +8,7 @@ def home():
 
 @app.route('/download')
 def download_file():
-    return send_file("file.pdf", as_attachment=True)
+    return send_file("file.pdf", as_attachment=True, download_name="ReadMe.pdf")
 
 if __name__ == '__main__':
     app.run(debug=True)
